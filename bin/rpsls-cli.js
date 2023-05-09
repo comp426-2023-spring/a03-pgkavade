@@ -33,15 +33,15 @@ if (args.h || args.help) {
 }
 
 if (args.r || args.rules) {
-    console.log(rules);
+  console.log(rules);
 	process.exit(0);
 }
 
-let shot = args._[0];
+let arg = args._[0];
 
 try {
-    let result = rpsls(shot);
-    console.log(JSON.stringify(result));
+    let ans = rps(arg);
+    console.log(JSON.stringify(ans));
 } catch (e) {
     console.log(help);
     console.log(rules);

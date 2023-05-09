@@ -30,11 +30,11 @@ if (args.r || args.rules) {
 	process.exit(0);
 }
 
-let shot = args._[0];
+let arg = args._[0];
 
 try {
-    let result = rps(shot);
-    console.log(JSON.stringify(result));
+    let ans = rps(arg);
+    console.log(JSON.stringify(ans));
 } catch (e) {
     console.log(help);
     console.log(rules);
