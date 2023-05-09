@@ -30,11 +30,13 @@ const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 - Rock CRUSHES Scissors`;
 
 if(args.r || args.rules) {
-  help();
+  console.log(rules);
+  process.exit(0);
 }
 
 if (args.h || args.help) {
-  rules();
+  console.log(help);
+  process.exit(0)
 }
 
 let choice = args._[0];
