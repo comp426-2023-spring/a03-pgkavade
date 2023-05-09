@@ -29,21 +29,21 @@ const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 - Spock VAPORIZES Rock
 - Rock CRUSHES Scissors`;
 
-if(args.r || args.rules) {
-  console.log(rules);
-  process.exit(0);
-}
-
 if (args.h || args.help) {
-  console.log(help);
-  process.exit(0)
+  help();
 }
-
-let choice = args._[0];
-
-try {
-  console.log(JSON.stringify(rps(choice)));
-} catch(error){
-  process.exit(1)
+else if (args.r || args.rules) {
+  rules();
+}
+else {
+  let output = rpsls(args._[0])
+  if (output != 'error') {
+      console.log(JSON.stringify(output));
+  }
+  else {
+      console.error(`${args._[0]} is out of range.`);
+      rules();
+      help();
+  } 
 }
 
