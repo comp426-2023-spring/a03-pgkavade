@@ -17,5 +17,31 @@ Examples:
   node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
                     e.g {"player":"rock","opponent":"Spock","result":"lose"}`;
 
+const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
+- Scissors CUTS Paper
+- Paper COVERS Rock
+- Rock SMOOSHES Lizard
+- Lizard POISONS Spock
+- Spock SMASHES Scissors
+- Scissors DECAPITATES Lizard
+- Lizard EATS Paper
+- Paper DISPROVES Spock
+- Spock VAPORIZES Rock
+- Rock CRUSHES Scissors`;
 
+if(args.r || args.rules) {
+  help();
+}
+
+if (args.h || args.help) {
+  rules();
+}
+
+let choice = args._[0];
+
+try {
+  console.log(JSON.stringify(rps(choice)));
+} catch(error){
+  process.exit(1)
+}
 
