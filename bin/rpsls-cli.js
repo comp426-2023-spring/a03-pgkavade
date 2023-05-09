@@ -30,20 +30,21 @@ const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 - Rock CRUSHES Scissors`;
 
 if (args.h || args.help) {
-  help();
+  console.log(help);
+	process.exit(0);
 }
 else if (args.r || args.rules) {
-  rules();
+  console.log(rules);
+	process.exit(0);
 }
-else {
-  let output = rpsls(args._[0])
-  if (output != 'error') {
-      console.log(JSON.stringify(output));
-  }
-  else {
-      console.error(`${args._[0]} is out of range.`);
-      rules();
-      help();
-  } 
+
+let and = args._[0];
+
+try {
+    let ans = rpsls(and);
+    console.log(JSON.stringify(ans));
+} catch (e) {
+    console.log(help);
+    console.log(rules);
 }
 
