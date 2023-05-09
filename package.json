@@ -10,7 +10,7 @@
       "type": "git",
       "url": "git+ssh://git@github.com/comp426-2023-spring/a03-pgkavade.git"
     },
-    "author": "pgkavade",
+    "author": "@pgkavade",
     "license": "GPL-3.0-or-later",
     "bugs": {
       "url": "https://github.com/comp426-2023-spring/a03-pgkavade/issues"
